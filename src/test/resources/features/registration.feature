@@ -1,0 +1,15 @@
+@Registration @Regression
+Feature: login
+
+  Scenario Outline: as admin user i want to login to ndosi website
+    Given i am on the login page
+    And i enter my email <email>
+    And i enter my password <password>
+    When i click on the login button
+    Then i should be logged in successfully
+    And i click on mobile automation
+    Examples:
+      | email           | password  |
+      | admin@gmail.com | @12345678 |
+
+
