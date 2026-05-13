@@ -32,7 +32,7 @@ public class stepDef {
     }
     @Then("i should be logged in successfully")
     public void i_should_be_logged_in_successfully() {
-        assert driver.findElement(By.xpath("//*[@id=\"app-root\"]/nav/div[1]/div[2]/div[4]/button/span[2]")).isDisplayed();
+        assert driver.findElement(By.xpath("//h2[contains(.,'Welcome back')]")).isDisplayed();
     }
     @And("i click on mobile automation")
     public void iClickOnMobileAutomation() {
