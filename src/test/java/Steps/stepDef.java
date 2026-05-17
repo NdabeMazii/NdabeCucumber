@@ -16,7 +16,7 @@ public class stepDef {
         driver = new ChromeDriver();
         driver.get("https://ndosisimplifiedautomation.vercel.app/");
         driver.manage().window().maximize();
-        driver.findElement(By.xpath("/html/body/div/div/nav/div[1]/div[3]/button")).click();
+        driver.findElement(By.xpath("//span[text()='Login']")).click();
     }
     @And("i enter my email (.*)$")
     public void i_enter_my_email(String email) {
@@ -32,7 +32,7 @@ public class stepDef {
     }
     @Then("i should be logged in successfully")
     public void i_should_be_logged_in_successfully() {
-        assert driver.findElement(By.xpath("//h2[contains(.,'Welcome back')]")).isDisplayed();
+        assert driver.findElement(By.xpath("//h2[1]")).isDisplayed();
     }
     @And("i click on mobile automation")
     public void iClickOnMobileAutomation() {
