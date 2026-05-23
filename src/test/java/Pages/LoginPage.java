@@ -28,8 +28,20 @@ public class LoginPage {
             this.driver = driver;
         }
 
-        public void clickLoginButton() {
+        public void verifyLoginPageIsDisplayed() {
             new WebDriverWait(driver, java.time.Duration.ofSeconds(15)).until(visibilityOf(loginHeading_xpath));
             loginHeading_xpath.click();
+        }
+
+        public void enterEmail(String email) {
+            loginEmail_id.sendKeys(email);
+        }
+
+        public void enterPassword(String password) {
+            loginPassword_id.sendKeys(password);
+        }
+
+        public void clickLoginButton() {
+            loginSubmitButton_id.click();
         }
 }
