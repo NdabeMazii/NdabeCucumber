@@ -14,6 +14,9 @@ public class DashboardPage {
     @FindBy(xpath = "//span[normalize-space()='Welcome']")
     WebElement dashboardHeading_xpath;
 
+    @FindBy(xpath = "//button[contains(@class,'user-pill')]//span[contains(text(),'👤')]")
+    WebElement userMenuButton_xpath;
+
     public DashboardPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -21,5 +24,10 @@ public class DashboardPage {
     public void verifyDashboardPageIsDisplayed() {
         new WebDriverWait(driver, java.time.Duration.ofSeconds(15)).until(visibilityOf(dashboardHeading_xpath));
         dashboardHeading_xpath.click();
+    }
+
+    public void clickUserMenuButton_xpath() {
+        new WebDriverWait(driver, java.time.Duration.ofSeconds(15)).until(visibilityOf(userMenuButton_xpath));
+        userMenuButton_xpath.click();
     }
 }

@@ -1,10 +1,11 @@
 package Steps;
 
 import io.cucumber.java.After;
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.*;
 
 
-public class stepDef extends Base{
+public class stepDef extends Base {
 
     @Given("i am on the login page")
     public void i_am_on_the_login_page() {
@@ -32,14 +33,56 @@ public class stepDef extends Base{
         dashboardPage.verifyDashboardPageIsDisplayed();
     }
 
-    @And("i click on mobile automation")
-    public void iClickOnMobileAutomation() {
-        //fffffff
-    }
-
     @After
     public void closeBrowser() {
     }
 
+    @And("I click on the logged user")
+    public void iClickOnTheLoggedUser() {
+    }
 
+    @And("I click on the admin panel")
+    public void iClickOnTheAdminPanel() {
+    }
+
+    @And("I click on the groups button")
+    public void iClickOnTheGroupsButton() {
+    }
+
+    @And("I click on the create new group button")
+    public void iClickOnTheCreateNewGroupButton() {
+    }
+
+    @And("I enter group name (.*)$")
+    public void iEnterGroupNameGroupName( String groupName) {
+    }
+
+    @And("I enter group description (.*)$")
+    public void iEnterGroupDescriptionGroupDescription(String groupDescription) {
+    }
+
+    @And("I enter year (.*)$")
+    public void iEnterYear(int year) {
+    }
+
+    @And("I enter max capacity (.*)$")
+    public void iEnterMaxCapacityMaxCapacity(int maxCapacity) {
+    }
+
+
+    @And("I enter start date (.*)$")
+    public void iEnterStartDateStartDate(String startDate) {
+    }
+
+    @And("I enter end date (.*)$")
+    public void iEnterEndDateEndDate(String endDate) {
+    }
+
+    @When("I click on the create group button")
+    public void iClickOnTheCreateGroupButton() {
+    }
+
+    @Then("i should see the group created successfully")
+    public void iShouldSeeTheGroupCreatedSuccessfully() {
+    }
 }

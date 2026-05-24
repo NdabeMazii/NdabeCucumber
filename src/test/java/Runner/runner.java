@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"Steps"},
-        tags = "@login",
+        tags = "@createGroup",
         plugin = {"html:target/cucumber-report.html"},
         monochrome = true,
         publish = true
