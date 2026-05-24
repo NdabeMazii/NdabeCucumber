@@ -19,7 +19,7 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>7.34.3</version>
+            <version>7.0.0</version>
             <scope>compile</scope>
         </dependency>
 
@@ -27,7 +27,7 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
-            <version>7.34.3</version>
+            <version>7.0.0</version>
             <scope>compile</scope>
         </dependency>
 
@@ -37,6 +37,18 @@
             <artifactId>selenium-java</artifactId>
             <version>4.43.0</version>
             <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.0.9</version> <!-- Make sure you're using a valid version -->
+        </dependency>
+
+        <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.1.0</version>
         </dependency>
     </dependencies>
 

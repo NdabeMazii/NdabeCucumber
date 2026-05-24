@@ -41,6 +41,7 @@ public class stepDef extends Base {
     public void closeBrowser() {
     }
 
+
     @And("I click on the logged user")
     public void iClickOnTheLoggedUser() {
         dashboardPage.clickUserMenuButton();
@@ -94,10 +95,10 @@ public class stepDef extends Base {
 
     @AfterStep
     public void addScreenshot(Scenario scenario) {
-        if (scenario.isFailed()) {
+//        if (scenario.isFailed()) {
             byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", "screenshot");
-        }
+//        }
 
     }
 }
