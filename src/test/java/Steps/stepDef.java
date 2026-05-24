@@ -39,10 +39,12 @@ public class stepDef extends Base {
 
     @And("I click on the logged user")
     public void iClickOnTheLoggedUser() {
+        dashboardPage.clickUserMenuButton();
     }
 
     @And("I click on the admin panel")
     public void iClickOnTheAdminPanel() {
+        dashboardPage.clickAdminPanelButton();
     }
 
     @And("I click on the groups button")
