@@ -1,8 +1,12 @@
 package Steps;
 
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.PendingException;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 
 public class stepDef extends Base {
@@ -56,7 +60,7 @@ public class stepDef extends Base {
     }
 
     @And("I enter group name (.*)$")
-    public void iEnterGroupNameGroupName( String groupName) {
+    public void iEnterGroupNameGroupName(String groupName) {
     }
 
     @And("I enter group description (.*)$")
@@ -86,5 +90,14 @@ public class stepDef extends Base {
 
     @Then("i should see the group created successfully")
     public void iShouldSeeTheGroupCreatedSuccessfully() {
+    }
+
+    @AfterStep
+    public void addScreenshot(Scenario scenario) {
+        if (scenario.isFailed()) {
+            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", "screenshot");
+        }
+
     }
 }
