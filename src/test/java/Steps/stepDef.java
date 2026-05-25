@@ -14,6 +14,9 @@ import java.time.format.DateTimeFormatter;
 
 public class stepDef extends Base {
 
+    private static final DateTimeFormatter OUTPUT_FORMAT =
+            DateTimeFormatter.ofPattern("MM/dd/yyyy");
+
     @Given("i am on the login page")
     public void i_am_on_the_login_page() {
         homePage.clickLoginButton();
@@ -88,25 +91,13 @@ public class stepDef extends Base {
 
     @And("I enter start date (.*)$")
     public void iEnterStartDateStartDate(String startDate) {
-        String formatted;
-        try {
-            LocalDate d = LocalDate.parse(startDate); // expects yyyy-MM-dd
-            formatted = d.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
-        } catch (Exception e) {
-            formatted = startDate;
-        }
+        String formatted = LocalDate.parse(startDate).format(OUTPUT_FORMAT);
         dashboardPage.enterStartDate(formatted);
     }
 
     @And("I enter end date (.*)$")
     public void iEnterEndDateEndDate(String endDate) {
-        String formatted;
-        try {
-            LocalDate d = LocalDate.parse(endDate); // expects yyyy-MM-dd
-            formatted = d.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
-        } catch (Exception e) {
-            formatted = endDate;
-        }
+        String formatted = LocalDate.parse(endDate).format(OUTPUT_FORMAT);
         dashboardPage.enterEndDate(formatted);
     }
 
