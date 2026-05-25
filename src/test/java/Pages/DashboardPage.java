@@ -20,6 +20,12 @@ public class DashboardPage {
     @FindBy(xpath = "//button[@class='nav-dropdown-item']//span[contains(text(),'Admin Panel')]")
     WebElement adminPanel_xpath;
 
+    @FindBy(xpath = "//button[contains(.,'Groups')]")
+    WebElement groupsButton_xpath;
+
+    @FindBy(xpath = "//button[normalize-space()='+ Create New Group']")
+    WebElement createNewGroup_xpath;
+
     public DashboardPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -36,5 +42,13 @@ public class DashboardPage {
 
     public void clickAdminPanelButton() {
         adminPanel_xpath.click();
+    }
+
+    public void clickGroupsButton() {
+        groupsButton_xpath.click();
+    }
+
+    public void clickCreateNewGroupButton() {
+        createNewGroup_xpath.click();
     }
 }

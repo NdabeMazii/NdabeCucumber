@@ -54,10 +54,12 @@ public class stepDef extends Base {
 
     @And("I click on the groups button")
     public void iClickOnTheGroupsButton() {
+        dashboardPage.clickGroupsButton();
     }
 
     @And("I click on the create new group button")
     public void iClickOnTheCreateNewGroupButton() {
+        dashboardPage.clickCreateNewGroupButton();
     }
 
     @And("I enter group name (.*)$")
@@ -96,8 +98,8 @@ public class stepDef extends Base {
     @AfterStep
     public void addScreenshot(Scenario scenario) {
 //        if (scenario.isFailed()) {
-            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot, "image/png", "screenshot");
+        byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+        scenario.attach(screenshot, "image/png", "screenshot");
 //        }
 
     }
