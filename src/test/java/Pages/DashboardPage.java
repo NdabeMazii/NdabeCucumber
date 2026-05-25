@@ -38,6 +38,18 @@ public class DashboardPage {
     @FindBy(xpath = "//input[@placeholder='Unlimited']")
     WebElement maximumCapacityInput_xpath;
 
+    @FindBy(xpath = "//input[@name='startDate']")
+    WebElement startDateInput_xpath;
+
+    @FindBy(xpath = "//input[@name='endDate']")
+    WebElement endDateInput_xpath;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    WebElement createGroupButton_xpath;
+
+    @FindBy(xpath = "//div[normalize-space()='Group created successfully!']")
+    WebElement groupCreationSuccessMessage_xpath;
+
     public DashboardPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -78,5 +90,22 @@ public class DashboardPage {
 
     public void enterMaximumCapacity(String maximumCapacity) {
         maximumCapacityInput_xpath.sendKeys(maximumCapacity);
+    }
+
+    public void enterStartDate(String startDate) {
+        startDateInput_xpath.sendKeys(startDate);
+    }
+
+    public void enterEndDate(String endDate) {
+        endDateInput_xpath.sendKeys(endDate);
+    }
+
+    public void clickCreateGroupButton() {
+        createGroupButton_xpath.click();
+    }
+
+    public void verifyGroupCreationSuccess() {
+            new WebDriverWait(driver, java.time.Duration.ofSeconds(15)).until(visibilityOf(groupCreationSuccessMessage_xpath));
+        groupCreationSuccessMessage_xpath.click();
     }
 }

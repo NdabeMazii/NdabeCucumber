@@ -18,9 +18,9 @@ Feature: createGroup
     And I enter start date <startDate>
     And I enter end date <endDate>
     When I click on the create group button
-    Then i should see the group created successfully
+    Then i should see the group creation success message
     Examples:
-      | email           | password  | groupName   | groupDescription | year | maxCapacity | startDate | endDate |
-      | admin@gmail.com | @12345678 | NdabeGroup1 | Cucumber         | 2026 | 50          | 12345     | 54321   |
+      | email           | password  | groupName   | groupDescription | year | maxCapacity | startDate  | endDate    |
+      | admin@gmail.com | @12345678 | NdabeGroup1 | Cucumber         |      | 50          | 05/25/2026 | 06/25/2026 |
 
 

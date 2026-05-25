@@ -8,6 +8,9 @@ import io.cucumber.java.en.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 
 public class stepDef extends Base {
 
@@ -85,18 +88,36 @@ public class stepDef extends Base {
 
     @And("I enter start date (.*)$")
     public void iEnterStartDateStartDate(String startDate) {
+        String formatted;
+        try {
+            LocalDate d = LocalDate.parse(startDate); // expects yyyy-MM-dd
+            formatted = d.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
+        } catch (Exception e) {
+            formatted = startDate;
+        }
+        dashboardPage.enterStartDate(formatted);
     }
 
     @And("I enter end date (.*)$")
     public void iEnterEndDateEndDate(String endDate) {
+        String formatted;
+        try {
+            LocalDate d = LocalDate.parse(endDate); // expects yyyy-MM-dd
+            formatted = d.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
+        } catch (Exception e) {
+            formatted = endDate;
+        }
+        dashboardPage.enterEndDate(formatted);
     }
 
     @When("I click on the create group button")
     public void iClickOnTheCreateGroupButton() {
+        dashboardPage.clickCreateGroupButton();
     }
 
-    @Then("i should see the group created successfully")
-    public void iShouldSeeTheGroupCreatedSuccessfully() {
+    @Then("i should see the group creation success message")
+    public void iShouldSeeTheGroupCreationSuccessMessage() {
+        dashboardPage.verifyGroupCreationSuccess();
     }
 
     @AfterStep
