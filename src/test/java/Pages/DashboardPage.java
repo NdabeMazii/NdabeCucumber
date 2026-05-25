@@ -26,6 +26,18 @@ public class DashboardPage {
     @FindBy(xpath = "//button[normalize-space()='+ Create New Group']")
     WebElement createNewGroup_xpath;
 
+    @FindBy(xpath = "//input[@placeholder='e.g., 2nd Group 2026']")
+    WebElement groupNameInput_xpath;
+
+    @FindBy(xpath = "//textarea[@placeholder='Group description...']")
+    WebElement groupDescriptionInput_xpath;
+
+    @FindBy(xpath = "//input[@name='year']")
+    WebElement groupYearInput_xpath;
+
+    @FindBy(xpath = "//input[@placeholder='Unlimited']")
+    WebElement maximumCapacityInput_xpath;
+
     public DashboardPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -50,5 +62,21 @@ public class DashboardPage {
 
     public void clickCreateNewGroupButton() {
         createNewGroup_xpath.click();
+    }
+
+    public void enterGroupName(String groupName) {
+        groupNameInput_xpath.sendKeys(groupName);
+    }
+
+    public void enterGroupDescription(String groupDescription) {
+        groupDescriptionInput_xpath.sendKeys(groupDescription);
+    }
+
+    public void enterGroupYear(String groupYear) {
+        groupYearInput_xpath.sendKeys(groupYear);
+    }
+
+    public void enterMaximumCapacity(String maximumCapacity) {
+        maximumCapacityInput_xpath.sendKeys(maximumCapacity);
     }
 }

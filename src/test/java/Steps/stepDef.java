@@ -64,18 +64,22 @@ public class stepDef extends Base {
 
     @And("I enter group name (.*)$")
     public void iEnterGroupNameGroupName(String groupName) {
+        dashboardPage.enterGroupName(groupName);
     }
 
     @And("I enter group description (.*)$")
     public void iEnterGroupDescriptionGroupDescription(String groupDescription) {
+        dashboardPage.enterGroupDescription(groupDescription);
     }
 
     @And("I enter year (.*)$")
-    public void iEnterYear(int year) {
+    public void iEnterYear(String groupYear) {
+        dashboardPage.enterGroupYear(String.valueOf(groupYear));
     }
 
     @And("I enter max capacity (.*)$")
-    public void iEnterMaxCapacityMaxCapacity(int maxCapacity) {
+    public void iEnterMaxCapacityMaxCapacity(String maxCapacity) {
+        dashboardPage.enterMaximumCapacity(String.valueOf(maxCapacity));
     }
 
 

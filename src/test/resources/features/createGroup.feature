@@ -20,7 +20,7 @@ Feature: createGroup
     When I click on the create group button
     Then i should see the group created successfully
     Examples:
-      | email           | password  | groupName | groupDescription | year | maxCapacity | startDate | endDate |
-      | admin@gmail.com | @12345678 | name      | description      | 2026 | 10          | 12345     | 54321   |
+      | email           | password  | groupName   | groupDescription | year | maxCapacity | startDate | endDate |
+      | admin@gmail.com | @12345678 | NdabeGroup1 | Cucumber         | 2026 | 50          | 12345     | 54321   |
 
 
